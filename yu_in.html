@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<title>生成语音53000</title>
+<style>
+		article {margin: 0 auto;max-width: 800px;}
+		textarea {max-width: 600px;width:100%;text-align: left;}
+		
+</style>
+<link rel="stylesheet" type="text/css" href="style.css"/> 
+</head>
+<body>
+<article>
+<form method="post" action="yu_in.php"> 
+   标题: <input type="text" name="name">
+   <br><br>
+   内容: <textarea name="tex" rows="8" cols="40"></textarea>
+   <br><br>
+   声音类型:<!-- 基础音库：0为度小美，1为度小宇，3为度逍遥，4为度丫丫 -->
+   <input type="radio" name="per" value=0 checked=checked>小美（女声）
+   <input type="radio" name="per" value=1>小宇（男声）
+   <input type="radio" name="per" value=4>丫丫（情感女声）
+   <input type="radio" name="per" value=3>逍遥（情感男声）
+   <br><br>
+    速度:
+   <input type="radio" name="spd" value=8>快
+   <input type="radio" name="spd" value=5 checked=checked> 中
+   <input type="radio" name="spd" value=2>慢
+    <br><br>
+	音调：
+	<input type="radio" name="pit" value=10> 高
+	<input type="radio" name="pit" value=5 checked=checked> 中
+	<br><br>
+	音量：
+	<input type="radio" name="vol" value=8> 高
+	<input type="radio" name="vol" value=5 checked=checked> 中
+	<br><br>
+
+   <input type="submit" name="submit" value="生成语音"> 
+</form>
+<audio controls>
+  <source src="<?php echo date('Ymd').'.mp3'; ?>" type="audio/ogg">
+  <source src="<?php echo date('Ymd').'.mp3'; ?>" type="audio/mpeg">
+您的浏览器不支持 audio 元素。
+</audio>
+<button>
+<a href="<?php echo date('Ymd').'.mp3'; ?>" download="<?php  echo date('Ymd').'.mp3'; ?>">点击下载</a></button> 
+</article>
+
+</body>
+</html>
